@@ -1,0 +1,29 @@
+.nav{
+    grid-area: nav;
+    background-color: rgba(34, 34, 34, 0.89);
+    padding: 20px 0 0 20px;
+}
+.nav ul{
+    margin: 10px 0 0 8px;
+}
+.item{
+    color: #5e5e5e;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.nav li{
+    padding-bottom: 10px;
+}
+.active_link {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 28px;
+}
+
+.list li{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.item:hover{
+    color: #ffffff;
+}

@@ -1,0 +1,22 @@
+.main_posts{
+
+}
+.formOfPost {
+    display: grid;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.formOfPost textarea{
+    background-color: #5e5e5e;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.formOfPost button{
+    background-color: #5e5e5e;
+    padding: 5px;
+    color: white;
+    font-size: 15px;
+}

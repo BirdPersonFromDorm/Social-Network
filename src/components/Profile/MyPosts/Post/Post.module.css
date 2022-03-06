@@ -1,0 +1,15 @@
+.main_post{
+    color: #000;
+    display: flex;
+}
+.main_post img{
+    width: 100px;
+    border-radius: 50%;
+}
+.main_post_img{
+    padding: 10px;
+}
+.main_post_message{
+    padding: 10px;
+    margin: auto 0;
+}

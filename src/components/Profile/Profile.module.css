@@ -1,0 +1,26 @@
+.main_info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.main_desc{
+    margin: auto 0;
+    font-size: 30px;
+    color: white;
+}
+.main_desc li{
+    margin-bottom: 10px;
+}
+.main_profile{
+
+}
+.main_profile_info_img{
+    justify-items: start;
+}
+.main_profile_info_img img{
+    border-radius: 5%;
+}
+.dark_color{
+    color: #0e0505;
+}

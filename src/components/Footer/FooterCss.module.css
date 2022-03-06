@@ -1,0 +1,9 @@
+.footer{
+    grid-area: footer;
+    background-color: rgba(34, 34, 34, 0.89);
+}
+.footer p{
+    text-align: center;
+    padding-top: 3vh;
+    color: #5e5e5e;;
+}
