@@ -3,7 +3,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from "react-dom";
 import App from "./App";
-import store from './../src/redux/state'
+import store from './redux/redux-store'
 
 export let render = (state) =>{
     ReactDOM.render(
@@ -17,6 +17,9 @@ export let render = (state) =>{
 
 render(store.getState());
 
-store.subscribe(render);
+store.subscribe(() =>{
+    let state = store.getState();
+    render(state);
+});
 
 reportWebVitals();

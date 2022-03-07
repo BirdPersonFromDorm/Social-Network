@@ -1,9 +1,7 @@
 import React from "react";
 import myPostsCss from './MyPosts.module.css'
 import Post from "./Post/Post";
-import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/state";
-
-
+import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/profileReducer";
 
 const MyPosts = (props) => {
     let postElements = props.postData
@@ -19,7 +17,6 @@ const MyPosts = (props) => {
         let text = newPostElement.current.value;
         props.dispatch(updateNewPostActionCreator(text));
     }
-
     return (
         <div>
             <div className={myPostsCss.formOfPost}>
