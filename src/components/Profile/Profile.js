@@ -10,7 +10,10 @@ const Profile = (props) => {
                 <img src="https://www.appears-itn.eu/wp-content/uploads/2018/07/long.jpg" alt=""/>
             </div>
             <MainInfo/>
-            <MyPosts postData={props.state.postData}/>
+            <MyPosts postData={props.profilePage.postData}
+                     textPost={props.profilePage.newPostText}
+                     dispatch={props.dispatch}
+                     addPost={props.addPost}/>
         </div>
     );
 }
