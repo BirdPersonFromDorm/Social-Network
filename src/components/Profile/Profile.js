@@ -1,7 +1,7 @@
 import React from "react";
 import profileCss from './Profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
 import MainInfo from "./MainInfo/MainInfo";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
     return (
@@ -10,10 +10,7 @@ const Profile = (props) => {
                 <img src="https://www.appears-itn.eu/wp-content/uploads/2018/07/long.jpg" alt=""/>
             </div>
             <MainInfo/>
-            <MyPosts postData={props.profilePage.postData}
-                     textPost={props.profilePage.newPostText}
-                     dispatch={props.dispatch}
-                     addPost={props.addPost}/>
+            <MyPostsContainer store={props.store}/>
         </div>
     );
 }
