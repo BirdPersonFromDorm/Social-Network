@@ -12,8 +12,10 @@ const Nav =()=>{
                     <NavLink to="/profile" className={setActive}>Profile</NavLink>
                 </li>
                 <li className={navCss.item}>
-                    <NavLink to="/dialogs" className={setActive}>Dialogs</NavLink></li>
-                <li className={navCss.item}><NavLink to="/news" className={setActive}>News</NavLink>
+                    <NavLink to="/dialogs" className={setActive}>Dialogs</NavLink>
+                </li>
+                <li className={navCss.item}>
+                    <NavLink to="/users" className={setActive}>Users</NavLink>
                 </li>
                 <li className={navCss.item}>
                     <NavLink to="/music" className={setActive}>Music</NavLink>

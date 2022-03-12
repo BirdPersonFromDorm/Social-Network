@@ -9,7 +9,7 @@ const Profile = (props) => {
             <div className={profileCss.main_profile}>
                 <img src="https://www.appears-itn.eu/wp-content/uploads/2018/07/long.jpg" alt=""/>
             </div>
-            <MainInfo/>
+            <MainInfo profile={props.profile}/>
             <MyPostsContainer store={props.store}/>
         </div>
     );

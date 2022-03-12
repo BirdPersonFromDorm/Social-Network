@@ -1,17 +1,26 @@
 import profileCss from "../Profile.module.css";
 import React from "react";
+import PreLoader from "../../PreLoader/PreLoader";
+import defaultPhoto from '../../../assets/main-pgoto.jpg';
 
-const MainInfo = () =>{
+const MainInfo = (props) =>{
+
+    if (!props.profile){
+        return (
+            <PreLoader/>
+        );
+    }
+
     return (
         <div className={profileCss.main_info}>
             <div className={profileCss.main_profile_info_img}>
-                <img src="https://image.shutterstock.com/image-vector/picture-icon-260nw-323592404.jpg" alt=""/>
+                <img src={props.profile.photos.large ? props.profile.photos.large : defaultPhoto} alt=""/>
             </div>
             <div className={profileCss.main_desc}>
                 <p>
                     <ul>
-                        <li><span className={profileCss.dark_color}>Name:</span> Roma</li>
-                        <li><span className={profileCss.dark_color}>City:</span> Gorlovka</li>
+                        <li><span className={profileCss.dark_color}>Name:</span> {props.profile.fullName}</li>
+                        <li><span className={profileCss.dark_color}>Github:</span> {props.profile.contacts.github}</li>
                     </ul>
                 </p>
             </div>

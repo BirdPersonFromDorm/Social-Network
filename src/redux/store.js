@@ -19,9 +19,9 @@ let store ={
         },
         profilePage: {
             postData: [
-                {message: 'Hi'},
-                {message: 'Hello'},
-                {message: 'My name is Roma'}
+                {id: 1, message: 'Hi'},
+                {id: 2, message: 'Hello'},
+                {id: 3, message: 'My name is Roma'}
             ],
             newPostText: 'someText'
         }

@@ -1,0 +1,37 @@
+.selectedPage{
+    color: aqua;
+    font-size: 30px;
+}
+.users_page{
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 10px;
+    cursor: pointer;
+}
+.user_container{
+    display: flex;
+    margin: 15px;
+}
+.user_container img{
+    width: 100px;
+    border-radius: 50%;
+}
+.leftUser{
+
+}
+.leftUser .photo{
+
+}
+.leftUser button{
+    width: 100px;
+    background-color: rgba(34, 34, 34, 0.89);
+    color: #878787;
+}
+.rightUser{
+    margin-left: 20px;
+}
+.rightUser h1{
+    padding: 20px;
+    font-size: 25px;
+}
+

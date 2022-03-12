@@ -20,6 +20,7 @@
 }
 .main_profile_info_img img{
     border-radius: 5%;
+    max-width: 300px;
 }
 .dark_color{
     color: #0e0505;
