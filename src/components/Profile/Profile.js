@@ -6,10 +6,9 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 const Profile = (props) => {
     return (
         <div>
-            <div className={profileCss.main_profile}>
-                <img src="https://www.appears-itn.eu/wp-content/uploads/2018/07/long.jpg" alt=""/>
-            </div>
-            <MainInfo profile={props.profile}/>
+            <MainInfo profile={props.profile}
+                      status={props.status}
+                      updateStatus={props.updateStatus}/>
             <MyPostsContainer store={props.store}/>
         </div>
     );

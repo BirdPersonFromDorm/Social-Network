@@ -1,32 +1,30 @@
 import React from "react";
 import myPostsCss from './MyPosts.module.css'
 import Post from "./Post/Post";
+import MyPostsForm from "./MyPostsForm";
+import {reduxForm} from "redux-form";
 
 const MyPosts = (props) => {
     let postElements = props.postData
-        .map(postElement => <Post message={postElement.message} key={postElement.id}/>)
+        .map(postElement => <Post message={postElement.message}  key={postElement.id}/>)
 
-    const newPostElement = React.createRef();
-
-    let addPost = () => {
-        props.addPost();
-    };
-
-    let changeText = () =>{
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    const onSubmit = (values) =>{
+        props.addPost(values.newPostText)
     }
     return (
         <div>
             <div className={myPostsCss.formOfPost}>
-               <textarea onChange={changeText} ref={newPostElement} value={props.textPost} rows="5" cols="33"/>
-                <button type="submit" onClick={addPost}>Send Message</button>
+               <AddNewPostForm onSubmit={onSubmit}/>
             </div>
             <div className={myPostsCss.main_posts}>
                 {postElements}
             </div>
         </div>
     );
+
 }
+const AddNewPostForm = reduxForm({
+    form: "ProfileAddNewPostForm"
+})(MyPostsForm)
 
 export default MyPosts;

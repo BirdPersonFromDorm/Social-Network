@@ -1,7 +1,8 @@
 import profileCss from "../Profile.module.css";
 import React from "react";
-import PreLoader from "../../PreLoader/PreLoader";
+import PreLoader from "../../common/PreLoader/PreLoader";
 import defaultPhoto from '../../../assets/main-pgoto.jpg';
+import MainStatus from "./MainStatus";
 
 const MainInfo = (props) =>{
 
@@ -23,6 +24,8 @@ const MainInfo = (props) =>{
                         <li><span className={profileCss.dark_color}>Github:</span> {props.profile.contacts.github}</li>
                     </ul>
                 </p>
+                <MainStatus status={props.status}
+                            updateStatus={props.updateStatus}/>
             </div>
         </div>
     );

@@ -2,12 +2,22 @@ import React from "react";
 import {connect} from "react-redux";
 import {
     follow,
-    getUsers,
+    requestUsers,
     setCurrentPage,
     toggleFollowingInProgress, unfollow,
 } from "../../redux/userReducer";
 import Users from "./Users";
-import PreLoader from "../PreLoader/PreLoader";
+import PreLoader from "../common/PreLoader/PreLoader";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {
+    getUsers,
+    getCurrentPage,
+    getFetching,
+    getFollowProgress,
+    getPageSize,
+    getTotalUsersCount
+} from "../../redux/usersSelectors";
 
 
 class UsersContainer extends React.Component {
@@ -39,17 +49,30 @@ class UsersContainer extends React.Component {
 
 }
 
+// let mapStateToProps = (state) => {
+//     return {
+//         users: state.usersPage.users,
+//         pageSize: state.usersPage.pageSize,
+//         totalUsersCount: state.usersPage.totalUsersCount,
+//         currentPage: state.usersPage.currentPage,
+//         isFetching: state.usersPage.isFetching,
+//         followingInProgress: state.usersPage.followingInProgress
+//     }
+// }
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getFetching(state),
+        followingInProgress: getFollowProgress(state)
     }
 }
 
 
-export default connect(mapStateToProps,
-    {follow, unfollow, setCurrentPage, toggleFollowingInProgress, getUsers})(UsersContainer);
+export default compose(
+    connect(mapStateToProps,
+        {follow, unfollow, setCurrentPage, toggleFollowingInProgress, getUsers: requestUsers}),
+    withAuthRedirect
+)(UsersContainer);

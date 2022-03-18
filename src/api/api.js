@@ -4,7 +4,7 @@ const instans = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        'API-KEY': '5680f66d-318e-4b8b-bb34-89a51fb51202'
+        'API-KEY': 'ba9851bb-c7d9-4b3e-8fd8-eee62d5c06dc '
     }
 })
 
@@ -18,4 +18,28 @@ export const usersApi = {
     postFollow(id){
         return (instans.post(`follow/${id}`).then(response => response.data));
     }
+}
+export const profileApi = {
+
+    getProfile(userId){
+        return (instans.get(`profile/${userId}`));
+    },
+    getStatus(userId){
+        return (instans.get(`profile/status/${userId}`));
+    },
+    updateStatus(status){
+        return (instans.put(`profile/status`, {status: status}));
+    }
+}
+export const authApi ={
+    me(){
+        return instans.get(`auth/me`).then(response => response.data)
+    },
+    login(email,password, rememberMe){
+        return instans.post(`auth/login`, {email,password, rememberMe}).then(response => response.data)
+    },
+    logout(){
+        return instans.delete(`auth/login`).then(response => response.data)
+    }
+
 }
